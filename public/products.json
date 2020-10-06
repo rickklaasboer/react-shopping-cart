@@ -1,0 +1,41 @@
+{
+  "data": {
+    "products": [
+      {
+        "id": 1,
+        "title": "Handsoap",
+        "description": "The best handsoap",
+        "price": "2,99",
+        "price_in_cents": 299
+      },
+      {
+        "id": 2,
+        "title": "Shampoo",
+        "description": "The shampoo you'll love",
+        "price": "3,99",
+        "price_in_cents": 399
+      },
+      {
+        "id": 3,
+        "title": "Dog food",
+        "description": "Your dog will love it",
+        "price": "7,99",
+        "price_in_cents": 799
+      },
+      {
+        "id": 4,
+        "title": "Cat food",
+        "description": "Your cat will probably hate it",
+        "price": "8,99",
+        "price_in_cents": 899
+      },
+      {
+        "id": 5,
+        "title": "Tired programmer",
+        "description": "He's so tired",
+        "price": "99,99",
+        "price_in_cents": 9999
+      }
+    ]
+  }
+}

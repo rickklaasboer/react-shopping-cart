@@ -1,0 +1,16 @@
+:root {
+  box-sizing: border-box;
+}
+
+.product-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.product-item {
+  max-width: 33%;
+  min-width: 33%;
+  border: 1px solid #000;
+}
