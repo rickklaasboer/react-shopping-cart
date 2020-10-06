@@ -4,6 +4,8 @@ import useCart from "../../hooks/useCart";
 export default function CartProductList() {
   const { products, removeFromCart } = useCart();
 
+  if (!products?.length) return <p>No products in card</p>;
+
   return (
     <table>
       <thead>

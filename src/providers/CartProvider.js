@@ -12,8 +12,9 @@ export default function CartProvider(props) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    if (Array.isArray(products) && products.length < 1) {
-      setProducts(JSON.parse(localStorage.getItem("cart")));
+    const storage = localStorage.getItem("cart");
+    if (Array.isArray(products) && products.length < 1 && storage) {
+      setProducts(JSON.parse(storage));
     }
   }, []);
 
