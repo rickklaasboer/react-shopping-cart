@@ -44,6 +44,7 @@ export default function CartProvider(props) {
       value={{
         addToCart,
         removeFromCart,
+        products,
       }}
     >
       {props.children}
