@@ -11,15 +11,17 @@ export default function CartProductList() {
       <thead>
         <tr>
           <th>id</th>
+          <th>amount</th>
           <th>remove</th>
         </tr>
       </thead>
       <tbody>
         {products.map((product) => (
           <tr key={Math.random()}>
-            <td>{product}</td>
+            <td>{product.id}</td>
+            <td>{product.amount}</td>
             <td>
-              <button onClick={() => removeFromCart(product)}>
+              <button onClick={() => removeFromCart(product.id)}>
                 verwijderen
               </button>
             </td>

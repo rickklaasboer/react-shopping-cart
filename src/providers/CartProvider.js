@@ -24,9 +24,23 @@ export default function CartProvider(props) {
    * @param {number} productId
    */
   function addToCart(productId) {
-    const newState = [...products, productId];
-    setProducts(newState);
-    localStorage.setItem("cart", JSON.stringify(newState));
+    const index = products.findIndex((product) => product.id === productId);
+
+    if (index !== -1) {
+      const productState = [...products];
+
+      productState[index] = {
+        ...productState[index],
+        amount: productState[index].amount + 1,
+      };
+
+      setProducts(productState);
+      updateLocalStorage(productState);
+    } else {
+      const newState = [...products, { id: productId, amount: 1 }];
+      setProducts(newState);
+      updateLocalStorage(newState);
+    }
   }
 
   /**
@@ -35,8 +49,17 @@ export default function CartProvider(props) {
    * @param {number} productId
    */
   function removeFromCart(productId) {
-    const newState = products.filter((id) => id !== productId);
+    const newState = products.filter((product) => product.id !== productId);
     setProducts(newState);
+    localStorage.setItem("cart", JSON.stringify(newState));
+  }
+
+  /**
+   * Updates the cart in local storage
+   *
+   * @param {Object} newState
+   */
+  function updateLocalStorage(newState) {
     localStorage.setItem("cart", JSON.stringify(newState));
   }
 
